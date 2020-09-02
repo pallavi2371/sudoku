@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>SUDOKU</title>
+    <link rel="stylesheet" href="sudoku.css">
+    <script src="sudoku.js"></script>
+</head>
+<body>
+<div class="main" style="padding-bottom:0px">
+    <h2><span id="play">PLAY</span> <span id="sudoku"><a id="s" href="">SUDOKU</a><br><br></span></h2>
+
+<div class="right-menu2" style="margin-top:10px;">
+ <button class="menu-button">HOME</button></div>
+<div class="right-menu2" style="margin-top:10px;">
+ <button class="menu-button"><a id="new"  style="color:#fff;text-decoration:none;"href="https://en.wikipedia.org/wiki/Sudoku">ABOUT</a></button></div> 
+
+<div class="right-menu" style="margin-top:10px;"> 
+ <button class="menu-button" style="margin-left:590px;margin-top:10px;padding-right:30px;">CONTACT US</button>
+ 
+ <div class="dropdown-menu" style="margin-left:1075px;">
+       <a href="mailto:someone@yoursite.com" >pallavi0963.cse19@chitkara.edu.in</a><br>
+        <a href="mailto:someone@yoursite.com">prerna0964.cse19@chitkara.edu.in</a>
+      </div>
+
+    <div id="setup-game">
+        <div id="diff">
+            <h3 style="font-family:'Lucida Console';">CHOOSE Difficulty: </h3>
+            
+            <label><input id="diff-1" type="radio" name="diff" value="easy">Easy</label>
+            <label><input id="diff-2" type="radio" name="diff" value="medium"checked>Medium</label>
+            <label><input id="diff-3" type="radio" name="diff" value="hard">Hard</label>
+
+ 
+
+        </div>
+
+ 
+
+
+        <div id="time" style="margin-left:20px;padding-left:100px;">
+            <h3 style="font-family:'Lucida Console';">CHOOSE Time: </h3>
+            
+            <label><input id="time-1" type="radio" name="time" value="three" checked="">3 Min</label>
+            <label><input id="time-2" type="radio" name="time" value="five">5 Min</label>
+            <label><input id="time-3" type="radio" name="time" value="ten">10 Min</label>
+
+ 
+
+        </div>
+
+ 
+
+
+        <div id="theme">
+            <h3 style="font-family:'Lucida Console';">CHOOSE Theme: </h3>
+            
+            <label><input id="theme-1" type="radio" name="theme" value="Light" checked>light</label>
+            <label><input id="theme-2" type="radio" name="theme" value="Dark">dark</label>
+
+ 
+
+        </div>
+    </div>
+    <button id="start-btn">CREATE NEW GAME</button>
+</div>
+
+ 
+
+
+    <div id="stats">
+        <p id="timer">
+            
+        </p>
+ 
+
+        <p id="lives">
+            
+        </p>
+    </div>
+
+ 
+
+    <div id="game">
+        <div id="board"></div>
+
+ 
+
+        <div id="number-container" class="hidden">
+            <p id="one">1</p>
+            <p id="two">2</p>
+            <p id="three">3</p>
+            <p id="four">4</p>
+            <p id="five">5</p>
+            <p id="six">6</p>
+            <p id="seven">7</p>
+            <p id="eight">8</p>
+            <p id="nine">9</p>
+        </div>
+    </div>
+
+
+<div class="main1" style="margin-bottom:0">
+<fieldset id="f1"><legend><h2>How To Play</h2></legend>
+<ul>
+<li>Select difficulty level by clicking the text next to the big red title "Sudoku"</li>
+<li>Fill cells with numbers from 1 to 9</li>
+<li>Pick a number by clicking a cell (with the mouse) or a keyboad [1-9] key</li>
+<li>Delete a number by clicking a cell's (x) button or pressing the 'Delete' key while mouse is over a cell</li>
+<li>The board has 9 regions, each has 9 cells</li>
+<li>Rule 1 - each Region consist of unique numbers (1-9)</li>
+<li>Rule 2 - each Row of the board consist of unique numbers (1-9)</li>
+<li>Rule 3 - each Column of the board consist of unique numbers (1-9)</li>
+
+</ul>
+</fieldset>
+</div>
+<div class="main2">
+<fieldset id="f2">
+<legend><h2>What's Happening Here</h2></legend>
+<ul>
+<li>Empty board is generated</li>
+<li>Board is populated with numbers until it's a valid Sudoku game</li>
+<li>Numbers are removed from each cell (and the mirror-cell)</li>
+<li>Board is solved (using DLX) for a single solution after each remove</li>
+<li>Try to remove as much numbers as possible</li>
+<li>Board is being re-solved using human-like logic to determine it's level</li>
+<li>While all this is happening, a pre-rendered board is dislpayed</li>
+<li>The game keeps generating new boards in the background using Web-Workes</li>
+</ul>
+</fieldset>
+</div>
+</body>
+</html>
